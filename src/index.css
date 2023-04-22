@@ -54,7 +54,21 @@
 @import url(./blocks/popup/__image/popup__image.css);
 @import url(./blocks/popup/__error/popup__error.css);
 @import url(./blocks/popup/__error/_visible/popup__error_visible.css);
+@import url(./blocks/popup/__tooltip/__image/popup__tooltip__image.css);
+@import url(./blocks/popup/__tooltip/__text/popup__tooltip__text.css);
 
 /* FOOTER */
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer/__text/footer__text.css);
+
+/*IDENTIFICATION*/
+@import url(./blocks/identification/identification.css);
+@import url(./blocks/identification/__form/identification__form.css);
+@import url(./blocks/identification/__heading/identification__heading.css);
+@import url(./blocks/identification/__input/identification__input.css);
+@import url(./blocks/identification/__button/identification__button.css);
+@import url(./blocks/identification/__link/identification__link.css);
+@import url(./blocks/identification/__route/identification__route.css);
+@import url(./blocks/identification/__email/identification__email.css);
+@import url(./blocks/identification/__logout/identification__logout.css);
+@import url(./blocks/identification/__block/identification__block.css);
