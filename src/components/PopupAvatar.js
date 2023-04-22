@@ -18,6 +18,7 @@ function PopupAvatar({ isOpen, onClose, onUpdateAvatar }) {
 			isOpen={isOpen}
 			onClose={onClose}
 			onSubmit={handleSubmit}
+			text={'Сохранить'}
 		>
 			<input
 				type="url"

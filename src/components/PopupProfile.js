@@ -15,7 +15,7 @@ function PopupProfile({ isOpen, onClose, onUpdateUser }) {
 			name: currentUser.name,
 			description: currentUser.about,
 		})
-	}, [currentUser])
+	}, [currentUser, isOpen])
 
 	function handleSubmit(e) {
 		e.preventDefault()
@@ -32,6 +32,7 @@ function PopupProfile({ isOpen, onClose, onUpdateUser }) {
 			isOpen={isOpen}
 			onClose={onClose}
 			onSubmit={handleSubmit}
+			text={'Сохранить'}
 		>
 			<input
 				type="text"

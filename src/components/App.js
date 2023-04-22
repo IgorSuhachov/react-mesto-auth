@@ -12,7 +12,7 @@ import { api } from '../utils/api'
 import { ProtectedRoute } from './ProtectedRoute'
 import Register from './Register'
 import Login from './Login'
-import * as auth from '../Auth'
+import * as auth from '../utils/Auth'
 import InfoToolTip from './InfoToolTip'
 
 function App() {
@@ -24,8 +24,8 @@ function App() {
 	const [currentUser, setCurrentUser] = React.useState({})
 	const [cards, setCards] = React.useState([])
 	const [loggedIn, setLoggedIn] = React.useState(false)
-	const [userEmail, setUserEmail] = React.useState()
-	const [res, setRes] = React.useState(false)
+	const [userEmail, setUserEmail] = React.useState('')
+	const [status, setStatus] = React.useState(false)
 	const navigate = useNavigate()
 	const location = useLocation()
 
@@ -38,7 +38,7 @@ function App() {
 			.catch((err) => {
 				console.log(err)
 			})
-	}, [])
+	})
 
 	function closeAllPopups() {
 		setIsEditProfilePopup(false)
@@ -140,12 +140,12 @@ function App() {
 			.register({ email, password })
 			.then(() => {
 				setInfoToolTip(true)
-				setRes(true)
+				setStatus(true)
 				navigate('/sign-in')
 			})
 			.catch((err) => {
 				console.log(err)
-				setRes(false)
+				setStatus(false)
 				setInfoToolTip(true)
 			})
 	}
@@ -201,7 +201,7 @@ function App() {
 					<PopupEdit isOpen={isAddPlacePopup} onClose={closeAllPopups} onEditPopup={handleAddPlace} />
 					<PopupAvatar isOpen={isEditAvatarPopup} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar} />
 					<ImagePopup card={selectedCard} onClose={closeAllPopups} />
-					<InfoToolTip isOpen={isInfoToolTip} onClose={closeAllPopups} res={res} />
+					<InfoToolTip isOpen={isInfoToolTip} onClose={closeAllPopups} status={status} />
 				</div>
 			</div>
 		</CurrentUserContext.Provider>

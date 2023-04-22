@@ -18,7 +18,14 @@ function PopupEdit({ isOpen, onClose, onEditPopup }) {
 	}
 
 	return (
-		<PopupWithForm name={'cardForm'} title={'Новое место'} isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit}>
+		<PopupWithForm
+			name={'cardForm'}
+			title={'Новое место'}
+			isOpen={isOpen}
+			onClose={onClose}
+			onSubmit={handleSubmit}
+			text={'Сохранить'}
+		>
 			<input
 				type="text"
 				placeholder={'Название'}
